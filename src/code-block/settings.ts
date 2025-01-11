@@ -10,6 +10,7 @@ export interface Settings {
   sortby: "name" | "mtime" | "ctime";
   sortrandom: boolean;
   fontsize: string;
+  maxheight: string;
   showtitle: boolean;
   debugquery: boolean;
   breakpoints: number | { default: number; [key: number]: number };
@@ -24,6 +25,7 @@ const DEFAULT_SETTINGS: Settings = {
   sortby: "mtime",
   sortrandom: false,
   fontsize: "6pt",
+  maxheight: "330px",
   showtitle: true,
   debugquery: false,
   breakpoints: {

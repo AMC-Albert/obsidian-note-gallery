@@ -56,6 +56,7 @@ sort: desc           # optional: desc | asc
 sortBy: mtime        # optional: mtime | ctime | name
 sortRandom: false    # optional: false | true - randomly sorts the cards, overrides other sorting options
 fontSize: 6pt        # optional: 6pt | NUMBERpt | NUMBERpx
+maxHeight: 330px     # optional: 330px | NUMBERpx | auto
 showTitle: true      # optional: true | false
 breakpoints:         # optional: allows to set breakpoints for number of columns
   default: 4

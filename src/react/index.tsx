@@ -35,6 +35,7 @@ export default function NoteGalleryApp({
 
   useEffect(() => {
     containerEl.style.setProperty("--note-card-font-size", settings.fontsize);
+    containerEl.style.setProperty("--note-card-max-height", settings.maxheight);
 
     const createEmbeddedSearchInstance = (
       embeddedSearchConstructor: typeof EmbeddedSearchClass,

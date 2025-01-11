@@ -34,7 +34,7 @@
 
 .note-card {
   line-height: normal;
-  max-height: 330px;
+  max-height: var(--note-card-max-height);
   padding: 10px;
   border-radius: 5px;
   background-color: var(--background-primary);
