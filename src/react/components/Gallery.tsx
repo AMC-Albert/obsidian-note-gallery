@@ -66,7 +66,12 @@ export default function Gallery() {
       } else if (file && VALID_VIDEO_EXTENSIONS.includes(file.extension) && settings.includevideofiles) {
         items.push(
           <Card key={file.name} file={file}>
-            <video controls preload="metadata" src={getResourcePath(app, file.path)} />
+            <video
+              controls
+              preload="metadata"
+              src={getResourcePath(app, file.path)}
+              onClick={(e) => e.stopPropagation()}
+            />
           </Card>,
         );
       } else if (file && VALID_AUDIO_EXTENSIONS.includes(file.extension) && settings.includeaudiofiles) {
