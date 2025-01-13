@@ -86,7 +86,7 @@ sortRandom: false           # false | true
 limit: 20                   # 20 | any number
 
 # font size of note content
-fontSize: 6pt               # 6pt | NUMBERpt | NUMBERpx
+fontSize: 12pt              # 12pt | NUMBERpt | NUMBERpx
 
 # maximum height of cards, set to auto for no limit
 maxHeight: 330px            # 330px | NUMBERpx | auto
@@ -96,17 +96,17 @@ showTitle: true             # true | false
 
 # set breakpoints for number of columns
 breakpoints:
-  default: 4
+  default: 3
   100000: 10
-  3500: 10
-  3100: 9
-  2700: 8
-  2300: 7
-  1900: 6
-  1500: 5
-  1000: 4
-  700: 3
-  400: 2
+  3500: 7
+  3100: 6
+  2700: 5
+  2300: 4
+  1900: 3
+  1500: 3
+  1000: 2
+  700: 1
+  400: 1
   200: 1
 ~~~~
 ```
