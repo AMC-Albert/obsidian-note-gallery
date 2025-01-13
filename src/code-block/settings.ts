@@ -2,38 +2,38 @@ import { App, MarkdownPostProcessorContext, normalizePath, parseYaml } from "obs
 import renderError from "~/code-block/errors";
 
 export interface Settings {
-  path: string;
   query: string;
-  limit: number;
+  debugquery: boolean;
+  path: string;
   recursive: boolean;
-  sort: "asc" | "desc";
-  sortby: "name" | "mtime" | "ctime";
-  sortrandom: boolean;
-  fontsize: string;
-  maxheight: string;
-  showtitle: boolean;
   includeimagefiles: boolean;
   includevideofiles: boolean;
   includeaudiofiles: boolean;
-  debugquery: boolean;
+  sort: "asc" | "desc";
+  sortby: "name" | "mtime" | "ctime";
+  sortrandom: boolean;
+  limit: number;
+  fontsize: string;
+  maxheight: string;
+  showtitle: boolean;
   breakpoints: number | { default: number; [key: number]: number };
 }
 
 const DEFAULT_SETTINGS: Settings = {
-  path: "",
   query: "",
-  limit: 0,
+  debugquery: false,
+  path: "",
   recursive: true,
-  sort: "desc",
-  sortby: "mtime",
-  sortrandom: false,
-  fontsize: "6pt",
-  maxheight: "330px",
-  showtitle: true,
   includeimagefiles: true,
   includevideofiles: true,
   includeaudiofiles: true,
-  debugquery: false,
+  sort: "desc",
+  sortby: "mtime",
+  sortrandom: false,
+  limit: 0,
+  fontsize: "6pt",
+  maxheight: "330px",
+  showtitle: true,
   breakpoints: {
     default: 4,
     100000: 10,

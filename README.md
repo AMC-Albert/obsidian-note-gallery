@@ -44,24 +44,58 @@ limit: 9
 
 ## Example Syntax
 ```
-~~~~note-gallery         #           default | options
-query: 'tag:#mytag'      # optional: anything you'd put into an obsidian search query
-                         # make sure to wrap into single quotes for any regex e.g.: '/\d/'
-debugQuery: false        # optional: false | true - display native search results to debug
-path: atlas              # optional: current note folder | path/to/folder - you don't **need**
-                         # to use path if you are using query, path will source additional notes
-recursive: true          # optional: true | false
-limit: 10                # optional: 0 | any number
-sort: desc               # optional: desc | asc
-sortBy: mtime            # optional: mtime | ctime | name
-sortRandom: false        # optional: false | true - randomly sorts the cards, overrides other sorting options
-fontSize: 6pt            # optional: 6pt | NUMBERpt | NUMBERpx
-maxHeight: 330px         # optional: 330px | NUMBERpx | auto
-showTitle: true          # optional: true | false
-includeImageFiles: true  # optional: true | false
-includeVideoFiles: true  # optional: true | false
-includeAudioFiles: true  # optional: true | false
-breakpoints:             # optional: allows to set breakpoints for number of columns
+~~~~note-gallery            # default | options
+
+# QUERY OPTIONS
+
+# query can be anything compatible with obsidian's search
+# make sure to wrap in single quotes for any regex e.g.: '/\d/'
+query: 'tag:#mytag'      
+
+# display native search results to debug
+debugQuery: false           # false | true
+
+# PATH OPTIONS
+
+# a path in your vault to source notes and media from
+# path and query can be used together to combine the sources
+path: atlas                 # current note folder | path/to/folder
+
+# search subfolders of path recursively
+recursive: true             # true | false
+
+# include media attachment files from the configured path
+includeImageFiles: true     # true | false
+includeVideoFiles: true     # true | false
+includeAudioFiles: true     # true | false
+
+# SORTING OPTIONS
+
+# descending or ascending order
+sort: desc                  # desc | asc
+
+# sort by modified time, created time, or filename
+sortBy: mtime               # mtime | ctime | name
+
+# randomly sorts the cards, overrides other sorting options
+sortRandom: false           # false | true
+
+# DISPLAY OPTIONS
+
+# maximum number of cards to display, set to 0 for no limit
+limit: 20                   # 20 | any number
+
+# font size of note content
+fontSize: 6pt               # 6pt | NUMBERpt | NUMBERpx
+
+# maximum height of cards, set to auto for no limit
+maxHeight: 330px            # 330px | NUMBERpx | auto
+
+# show the note title at top of card
+showTitle: true             # true | false
+
+# set breakpoints for number of columns
+breakpoints:
   default: 4
   100000: 10
   3500: 10
