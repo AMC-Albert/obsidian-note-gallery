@@ -5,7 +5,7 @@ import Masonry from "~/react/masonry";
 import Card from "~/react/components/Card";
 import CardMarkdownContent from "~/react/components/CardMarkdownContent";
 import Loader from "~/react/components/Loader";
-import { useFiles } from "~/react/utils/use-files";
+import { useFiles, VALID_IMAGE_EXTENSIONS, VALID_VIDEO_EXTENSIONS } from "~/react/utils/use-files";
 import { useAppMount } from "~/react/context/app-mount-provider";
 import { getResourcePath } from "~/react/utils/render-utils";
 
@@ -52,10 +52,16 @@ export default function Gallery() {
             <CardMarkdownContent file={file} />
           </Card>,
         );
-      } else if (file) {
+      } else if (file && VALID_IMAGE_EXTENSIONS.includes(file.extension)) {
         items.push(
           <Card key={file.name} file={file}>
             <img src={getResourcePath(app, file.path)} />
+          </Card>,
+        );
+      } else if (file && VALID_VIDEO_EXTENSIONS.includes(file.extension)) {
+        items.push(
+          <Card key={file.name} file={file}>
+            <video controls preload="metadata" src={getResourcePath(app, file.path)} />
           </Card>,
         );
       }

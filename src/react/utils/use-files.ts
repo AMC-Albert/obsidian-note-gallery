@@ -19,7 +19,10 @@ type InsensitiveVault = Vault & {
   getAbstractFileByPathInsensitive?: null | ((path: string) => TAbstractFile | null);
 };
 
-const VALID_EXTENSIONS = ["jpeg", "jpg", "gif", "png", "webp", "tiff", "tif", "md"];
+export const VALID_IMAGE_EXTENSIONS = ["jpeg", "jpg", "gif", "png", "webp", "tiff", "tif"];
+export const VALID_VIDEO_EXTENSIONS = ["mkv", "mov", "mp4", "ogv", "webm"];
+const VALID_EXTENSIONS = [...VALID_IMAGE_EXTENSIONS, ...VALID_VIDEO_EXTENSIONS, "md"];
+
 
 const getFilesRecursive = (files: TAbstractFile[], recursive = false) =>
   files.reduce((children, abstractFile) => {
