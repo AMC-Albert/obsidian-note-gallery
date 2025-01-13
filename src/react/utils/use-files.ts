@@ -21,7 +21,8 @@ type InsensitiveVault = Vault & {
 
 export const VALID_IMAGE_EXTENSIONS = ["jpeg", "jpg", "gif", "png", "webp", "tiff", "tif"];
 export const VALID_VIDEO_EXTENSIONS = ["mkv", "mov", "mp4", "ogv", "webm"];
-const VALID_EXTENSIONS = [...VALID_IMAGE_EXTENSIONS, ...VALID_VIDEO_EXTENSIONS, "md"];
+export const VALID_AUDIO_EXTENSIONS = ["flac", "m4a", "mp3", "ogg", "wav", "3gp"];
+const VALID_EXTENSIONS = [...VALID_IMAGE_EXTENSIONS, ...VALID_VIDEO_EXTENSIONS, ...VALID_AUDIO_EXTENSIONS, "md"];
 
 
 const getFilesRecursive = (files: TAbstractFile[], recursive = false) =>
