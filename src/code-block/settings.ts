@@ -12,6 +12,9 @@ export interface Settings {
   fontsize: string;
   maxheight: string;
   showtitle: boolean;
+  includeimagefiles: boolean;
+  includevideofiles: boolean;
+  includeaudiofiles: boolean;
   debugquery: boolean;
   breakpoints: number | { default: number; [key: number]: number };
 }
@@ -27,6 +30,9 @@ const DEFAULT_SETTINGS: Settings = {
   fontsize: "6pt",
   maxheight: "330px",
   showtitle: true,
+  includeimagefiles: true,
+  includevideofiles: true,
+  includeaudiofiles: true,
   debugquery: false,
   breakpoints: {
     default: 4,

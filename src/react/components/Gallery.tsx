@@ -5,7 +5,12 @@ import Masonry from "~/react/masonry";
 import Card from "~/react/components/Card";
 import CardMarkdownContent from "~/react/components/CardMarkdownContent";
 import Loader from "~/react/components/Loader";
-import { useFiles, VALID_IMAGE_EXTENSIONS, VALID_VIDEO_EXTENSIONS, VALID_AUDIO_EXTENSIONS } from "~/react/utils/use-files";
+import {
+  useFiles,
+  VALID_IMAGE_EXTENSIONS,
+  VALID_VIDEO_EXTENSIONS,
+  VALID_AUDIO_EXTENSIONS
+} from "~/react/utils/use-files";
 import { useAppMount } from "~/react/context/app-mount-provider";
 import { getResourcePath } from "~/react/utils/render-utils";
 
@@ -52,19 +57,19 @@ export default function Gallery() {
             <CardMarkdownContent file={file} />
           </Card>,
         );
-      } else if (file && VALID_IMAGE_EXTENSIONS.includes(file.extension)) {
+      } else if (file && VALID_IMAGE_EXTENSIONS.includes(file.extension) && settings.includeimagefiles) {
         items.push(
           <Card key={file.name} file={file}>
             <img src={getResourcePath(app, file.path)} />
           </Card>,
         );
-      } else if (file && VALID_VIDEO_EXTENSIONS.includes(file.extension)) {
+      } else if (file && VALID_VIDEO_EXTENSIONS.includes(file.extension) && settings.includevideofiles) {
         items.push(
           <Card key={file.name} file={file}>
             <video controls preload="metadata" src={getResourcePath(app, file.path)} />
           </Card>,
         );
-      } else if (file && VALID_AUDIO_EXTENSIONS.includes(file.extension)) {
+      } else if (file && VALID_AUDIO_EXTENSIONS.includes(file.extension) && settings.includeaudiofiles) {
         items.push(
           <Card key={file.name} file={file}>
             <audio controls controlsList="nodownload" src={getResourcePath(app, file.path)} />
